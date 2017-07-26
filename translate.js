@@ -16,7 +16,7 @@
 */
 
 /**
- * @type {String[][]}
+ * @type {string[][]}
  */
 let dictionary = require("./dictionary.json");
 
