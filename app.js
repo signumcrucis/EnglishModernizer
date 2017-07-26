@@ -2,12 +2,15 @@ let args = process.argv.slice(2);
 let fs = require('fs');
 
 let table = [
+    //pronouns
     ["(?:thou|thee)", "you"],
     ["thy", "your"],
     ["thine", "yours"],
     ["(?:Thou|Thee)", "You"],
     ["Thy", "Your"],
     ["Thine", "Yours"],
+
+    //common verbs
     ["art", "are"],
     ["Art", "Are"],
     ["hast", "have"],
@@ -15,27 +18,27 @@ let table = [
     ["dost", "do"],
     ["wilt", "will"],
 
-
+    //other verbs
     ["strikest", "strike"],
     ["breakest", "break"],
     ["enlargest", "enlarge"],
     ["enablest", "enable"],
     ["hatest", "hate"],
-    ["rememberest", "remembere"],
-    ["visitest", "visite"],
-    ["upholdest", "upholde"],
-    ["liftest", "lifte"],
+    ["rememberest", "remember"],
+    ["visitest", "visit"],
+    ["upholdest", "uphold"],
+    ["liftest", "lift"],
     ["seest", "see"],
-    ["beholdest", "beholde"],
-    ["mayest", "maye"],
-    ["hearest", "heare"],
+    ["beholdest", "behold"],
+    ["mayest", "may"],
+    ["hearest", "hear"],
     ["restorest", "restore"],
     ["savest", "save"],
     ["answerest", "answer"],
     ["dwellest", "dwell"],
     ["hidest", "hide"],
     ["shelterest", "shelter"],
-    ["forgavest", "forgav"],
+    ["forgavest", "forgave"],
     ["knowest", "know"],
     ["nearest", "near"],
     ["correctest", "correct"],
@@ -54,7 +57,7 @@ let table = [
     ["inflictest", "inflict"],
     ["hurlest", "hurl"],
     ["holdest", "hold"],
-    ["guidest", "guid"],
+    ["guidest", "guide"],
     ["receivest", "receive"],
     ["destroyest", "destroy"],
     ["gavest", "gave"],
@@ -65,8 +68,8 @@ let table = [
     ["rulest", "rule"],
     ["trainest", "train"],
     ["teachest", "teach"],
-    ["remainest", "remaine"],
-    ["waterest", "watere"],
+    ["remainest", "remain"],
+    ["waterest", "water"],
     ["decreest", "decree"],
     ["openest", "open"],
     ["turnest", "turn"],
@@ -122,8 +125,6 @@ function translate(text)
         let entry = table[i];
         let pattern = "(\\W)"+entry[0]+"(\\W)";
         let replacement = "$1"+entry[1]+"$2";
-        //let pattern = entry[0];
-        //let replacement = entry[1];
         text = text.replace(new RegExp(pattern, "g") , replacement );
     }
 
