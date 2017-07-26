@@ -16,14 +16,17 @@
 */
 
 
-// Get command line args
+
 let args = process.argv.slice(2);
-// filesystem
+
 let fs = require('fs');
-// translation
+
 let translate = require('./translate.js');
 
-// Main, Self calling
+/**
+ * Main function
+ * @param {string[]} args 
+ */
 function main(args)
 {
     if(args.length == 1)
@@ -40,9 +43,12 @@ function main(args)
     }
 }
 
-/*
-    Convert function, opens files, calls the translator, saves the new file. 
-*/
+
+/**
+ * Convert function, opens files, calls the translator, saves the new file. 
+ * @param {string} fileIn path of in file
+ * @param {string} fileOut path of out file
+ */
 function convert(fileIn, fileOut)
 {
     fs.readFile(fileIn, 'utf8', function (err,data) {

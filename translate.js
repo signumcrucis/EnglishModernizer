@@ -15,10 +15,16 @@
 
 */
 
-// get the dictionary json file.
+/**
+ * @type {String[][]}
+ */
 let dictionary = require("./dictionary.json");
 
-let translate = (text) =>
+/**
+ * 
+ * @param {string} text text content to convert
+ */
+function translate(text)
 {
     text = text.toString();
     for(let i = 0; i < dictionary.length; i++)
